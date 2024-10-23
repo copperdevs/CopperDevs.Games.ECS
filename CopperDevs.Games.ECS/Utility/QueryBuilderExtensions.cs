@@ -2,7 +2,7 @@
 
 namespace CopperDevs.Games.ECS.Utility;
 
-public static class QueryBuilderExtensions
+internal static class QueryBuilderExtensions
 {
     private enum FilterType
     {
@@ -25,15 +25,15 @@ public static class QueryBuilderExtensions
         return queryBuilder;
     }
 
-    public static TQueryBuilder Has<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
+    internal static TQueryBuilder Has<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
         where TQueryBuilder : class =>
         BaseFilter(queryBuilder, type, FilterType.Has);
 
-    public static TQueryBuilder Not<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
+    internal static TQueryBuilder Not<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
         where TQueryBuilder : class =>
         BaseFilter(queryBuilder, type, FilterType.Not);
 
-    public static TQueryBuilder Any<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
+    internal static TQueryBuilder Any<TQueryBuilder>(this TQueryBuilder queryBuilder, Type type)
         where TQueryBuilder : class =>
         BaseFilter(queryBuilder, type, FilterType.Any);
 }
