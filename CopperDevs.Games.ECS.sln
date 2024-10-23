@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopperDevs.Games.ECS", "CopperDevs.Games.ECS\CopperDevs.Games.ECS.csproj", "{4B266805-500F-4E73-8C84-3167FA3F1F46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repo", "Repo", "{60E90F7B-41EC-4060-B328-C158E9CB8383}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+		License.txt = License.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B266805-500F-4E73-8C84-3167FA3F1F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B266805-500F-4E73-8C84-3167FA3F1F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B266805-500F-4E73-8C84-3167FA3F1F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B266805-500F-4E73-8C84-3167FA3F1F46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
