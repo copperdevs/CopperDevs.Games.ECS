@@ -5,7 +5,7 @@ namespace CopperDevs.Games.ECS;
 public record struct HasFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
+    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
         where TQueryBuilder : class
         => queryBuilder.Has(typeof(TTargetType));
 }
@@ -13,7 +13,7 @@ public record struct HasFilter<TTargetType> : IFilter
 public record struct NotFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
+    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
         where TQueryBuilder : class
         => queryBuilder.Not(typeof(TTargetType));
 }
@@ -21,7 +21,7 @@ public record struct NotFilter<TTargetType> : IFilter
 public record struct AnyFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
+    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
         where TQueryBuilder : class
         => queryBuilder.Any(typeof(TTargetType));
 }

@@ -1,6 +1,6 @@
 ﻿namespace CopperDevs.Games.ECS.Systems;
 
-public abstract class BaseSystem<T1, T2, T3, T4>(StreamType streamType) : BaseSystem
+public abstract class BaseSystem<T1, T2, T3, T4> : BaseSystem
     where T1 : notnull, new()
     where T2 : notnull, new()
     where T3 : notnull, new()
@@ -14,14 +14,12 @@ public abstract class BaseSystem<T1, T2, T3, T4>(StreamType streamType) : BaseSy
 
         if (typeof(TStreamType) == typeof(StreamTypes.For))
         {
-            stream.For((ref T1 componentOne, ref T2 componentTwo, ref T3 componentThree, ref T4 componentFour) =>
-                Update(ref componentOne, ref componentTwo, ref componentThree, ref componentFour));
+            stream.For(Update);
         }
 
         else if (typeof(TStreamType) == typeof(StreamTypes.Job))
         {
-            stream.Job((ref T1 componentOne, ref T2 componentTwo, ref T3 componentThree, ref T4 componentFour) =>
-                Update(ref componentOne, ref componentTwo, ref componentThree, ref componentFour));
+            stream.Job(Update);
         }
     }
 }

@@ -12,14 +12,12 @@ public abstract class BaseSystem<T1, T2> : BaseSystem
 
         if (typeof(TStreamType) == typeof(StreamTypes.For))
         {
-            stream.For((ref T1 componentOne, ref T2 componentTwo) =>
-                Update(ref componentOne, ref componentTwo));
+            stream.For(Update);
         }
 
         else if (typeof(TStreamType) == typeof(StreamTypes.Job))
         {
-            stream.Job((ref T1 componentOne, ref T2 componentTwo) =>
-                Update(ref componentOne, ref componentTwo));
+            stream.Job(Update);
         }
     }
 }
