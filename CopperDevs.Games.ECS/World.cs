@@ -5,10 +5,10 @@ namespace CopperDevs.Games.ECS;
 
 public partial class World : SafeDisposable
 {
-    private FennecsWorld ecsWorld = new();
-    
+    private readonly FennecsWorld ecsWorld = [];
+
     public EntitySpawner CreateEntity() => ecsWorld.Entity();
-    
+
     public override void DisposeResources()
     {
         ecsWorld.Dispose();
