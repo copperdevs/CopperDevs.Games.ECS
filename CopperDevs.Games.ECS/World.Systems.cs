@@ -26,8 +26,7 @@ public partial class World
             .Add<TSystemType>()
             .Add<TStreamType>()
             .Add(new SystemHolder(baseSystem, filters))
-            .Spawn()
-            .Dispose();
+            .Spawn();
     }
 
     public void SpawnSystem<TSystem, TType1, TSystemType, TStreamType>(params IFilter[] filters)
