@@ -2,7 +2,7 @@
 
 public abstract class BaseSystem
 {
-    protected internal World world;
+    protected World world = null!;
     protected internal abstract void UpdateSystem<TStreamType>(IFilter[] filters) where TStreamType : StreamType;
 
     protected internal void SetWorld(World targetWorld) => world = targetWorld;
