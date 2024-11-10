@@ -1,32 +1,32 @@
-﻿using CopperDevs.Games.ECS.Utility;
+﻿using fennecs;
 
 namespace CopperDevs.Games.ECS;
 
 public record struct HasFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
-        where TQueryBuilder : class
-        => queryBuilder.Has(typeof(TTargetType));
+    public readonly T FilterQuery<T>(T queryBuilder)
+        where T : QueryBuilderBase<T>
+        => queryBuilder.Has<TTargetType>();
 }
 
 public record struct NotFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
-        where TQueryBuilder : class
-        => queryBuilder.Not(typeof(TTargetType));
+    public readonly T FilterQuery<T>(T queryBuilder)
+        where T : QueryBuilderBase<T>
+        => queryBuilder.Not<TTargetType>();
 }
 
 public record struct AnyFilter<TTargetType> : IFilter
     where TTargetType : notnull, new()
 {
-    public readonly TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder)
-        where TQueryBuilder : class
-        => queryBuilder.Any(typeof(TTargetType));
+    public readonly T FilterQuery<T>(T queryBuilder)
+        where T : QueryBuilderBase<T>
+        => queryBuilder.Any<TTargetType>();
 }
 
 public interface IFilter
 {
-    public TQueryBuilder FilterQuery<TQueryBuilder>(TQueryBuilder queryBuilder) where TQueryBuilder : class;
+    public T FilterQuery<T>(T queryBuilder) where T : QueryBuilderBase<T>;
 }

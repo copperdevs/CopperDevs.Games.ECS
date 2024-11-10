@@ -2,7 +2,7 @@
 
 namespace CopperDevs.Games.ECS;
 
-public partial class World
+public sealed partial class World
 {
     public QueryBuilder<C1> QueryEntities<C1>()
         where C1 : notnull =>

@@ -3,7 +3,7 @@ using fennecs;
 
 namespace CopperDevs.Games.ECS;
 
-public partial class World : SafeDisposable
+public sealed partial class World : SafeDisposable
 {
     private readonly FennecsWorld ecsWorld = [];
 

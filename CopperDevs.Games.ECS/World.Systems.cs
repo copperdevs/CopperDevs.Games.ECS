@@ -2,7 +2,7 @@
 
 namespace CopperDevs.Games.ECS;
 
-public partial class World
+public sealed partial class World
 {
     public void UpdateSystem<TSystemType, TStreamType>()
         where TSystemType : SystemType
