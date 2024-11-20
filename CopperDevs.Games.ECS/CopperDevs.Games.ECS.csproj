@@ -26,6 +26,9 @@
       <Compile Update="World.Stream.cs">
         <DependentUpon>World.cs</DependentUpon>
       </Compile>
+      <Compile Update="World.Count.cs">
+        <DependentUpon>World.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
