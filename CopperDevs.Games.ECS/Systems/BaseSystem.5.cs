@@ -11,9 +11,7 @@ public abstract class BaseSystem<T1, T2, T3, T4, T5> : BaseSystem
 
     protected internal override void UpdateSystem<TStreamType>(IFilter[] filters)
     {
-        var stream = World.QueryEntities<T1, T2, T3, T4, T5>(filters).Stream();
-
-        if (typeof(TStreamType) == typeof(StreamTypes.For)) stream.For(Update);
-        else if (typeof(TStreamType) == typeof(StreamTypes.Job)) stream.Job(Update);
+        if (typeof(TStreamType) == typeof(StreamTypes.For)) World.For<T1, T2, T3, T4, T5>(Update);
+        else if (typeof(TStreamType) == typeof(StreamTypes.Job)) World.Job<T1, T2, T3, T4, T5>(Update);
     }
 }

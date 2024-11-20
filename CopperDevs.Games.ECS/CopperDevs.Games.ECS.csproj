@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="fennecs" Version="0.5.11-beta" />
+      <PackageReference Include="fennecs" Version="0.5.14-beta" />
     </ItemGroup>
 
     <ItemGroup>
@@ -15,6 +15,15 @@
         <DependentUpon>World.cs</DependentUpon>
       </Compile>
       <Compile Update="World.Systems.cs">
+        <DependentUpon>World.cs</DependentUpon>
+      </Compile>
+      <Compile Update="World.Job.cs">
+        <DependentUpon>World.cs</DependentUpon>
+      </Compile>
+      <Compile Update="World.For.cs">
+        <DependentUpon>World.cs</DependentUpon>
+      </Compile>
+      <Compile Update="World.Stream.cs">
         <DependentUpon>World.cs</DependentUpon>
       </Compile>
     </ItemGroup>
