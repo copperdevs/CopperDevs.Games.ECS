@@ -1,28 +1,29 @@
-﻿namespace CopperDevs.Games.ECS.Utility;
-
-public abstract class SafeDisposable : IDisposable
+﻿namespace CopperDevs.Games.ECS.Utility
 {
-    private bool hasDisposed = false;
-
-    ~SafeDisposable()
+    public abstract class SafeDisposable : IDisposable
     {
-        Dispose(false);
-    }
-    
-    public void Dispose()
-    {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
+        private bool hasDisposed = false;
 
-    private void Dispose(bool manual)
-    {
-        if(hasDisposed)
-            return;
-        
-        hasDisposed = true;
-        DisposeResources();
-    }
+        ~SafeDisposable()
+        {
+            Dispose(false);
+        }
 
-    public abstract void DisposeResources();
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool manual)
+        {
+            if (hasDisposed)
+                return;
+
+            hasDisposed = true;
+            DisposeResources();
+        }
+
+        public abstract void DisposeResources();
+    }
 }
