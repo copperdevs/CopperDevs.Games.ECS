@@ -1,17 +1,16 @@
-﻿using CopperDevs.Games.ECS.Utility;
+﻿using CopperDevs.Core.Utility;
 using fennecs;
 
-namespace CopperDevs.Games.ECS
+namespace CopperDevs.Games.ECS;
+
+public sealed partial class World : SafeDisposable
 {
-    public sealed partial class World : SafeDisposable
+    private readonly FennecsWorld ecsWorld = [];
+
+    public EntitySpawner CreateEntity() => ecsWorld.Entity();
+
+    public override void DisposeResources()
     {
-        private readonly FennecsWorld ecsWorld = [];
-
-        public EntitySpawner CreateEntity() => ecsWorld.Entity();
-
-        public override void DisposeResources()
-        {
-            ecsWorld.Dispose();
-        }
+        ecsWorld.Dispose();
     }
 }
