@@ -4,6 +4,28 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>CopperDevs.Games.ECS</Title>
+        <Authors>copperdevs</Authors>
+        <Description>Simple layer above fennecs focused on games</Description>
+        <Copyright>MIT</Copyright>
+        <PackageProjectUrl>https://github.com/copperdevs/CopperDevs.games.ECS</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/copperdevs/CopperDevs.Games.ECS.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <Version>1.0.0</Version>
+        <PackageLicenseFile>License.txt</PackageLicenseFile>
+        <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DocumentationFile></DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile></DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -30,6 +52,18 @@
       <Compile Update="World.Count.cs">
         <DependentUpon>World.cs</DependentUpon>
       </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <None Include="..\ReadMe.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\License.txt">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
 </Project>
